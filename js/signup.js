@@ -1,67 +1,81 @@
-import { auth, db } from './firebase-config.js';
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-import { doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import { auth, db, createUserWithEmailAndPassword, doc, setDoc, serverTimestamp } from './firebase-config.js';
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $('#signupForm').on('submit', async function(e) {
+    $('#loginForm').on('submit', async function (e) {
         e.preventDefault();
+        loading(0);
 
-        //نشل الباينات من الفورم عبر الحقول 
+
+        // الحصول على القيم من المدخلات
         const fullName = $('#fullName').val();
         const age = $('#age').val();
         const gender = $('#gender').val();
+        const weight = $('#weight').val();
+        const height = $('#height').val();
+        const chronicConditions = $('#chronicConditions').val();
         const email = $('#email').val();
         const password = $('#password').val();
-        
-        const btn = $('#btnSignup');
-        const btnText = $('#btnText');
-        const btnLoader = $('#btnLoader');
-        const statusMsg = $('#statusMessage');
 
-        // هنا بنعمل تعطيل للزر عشان ماحدن يقدر يضغط عليه مره تانية
-        btn.prop('disabled', true);
-        btnText.addClass('d-none');
-        btnLoader.removeClass('d-none');
-        statusMsg.addClass('d-none').removeClass('alert-danger alert-success');
+
+        const errorDiv = $('#errorMessage');
+
 
         try {
-            // 1. إنشاء الحساب في فايربيس اوث
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
 
-            // 2. تخزين بيانات المستخدم  في قاعدة بيانات فايربيس
+
             await setDoc(doc(db, "users", user.uid), {
                 uid: user.uid,
                 fullName: fullName,
                 age: parseInt(age),
                 gender: gender,
+                weight: parseFloat(weight),
+                height: parseFloat(height),
+                chronicConditions: chronicConditions ? chronicConditions.trim() : "",
                 email: email,
                 createdAt: serverTimestamp()
             });
 
-            // نجاح العملية
-            statusMsg.removeClass('d-none').addClass('alert-success').text('تم إنشاء الحساب بنجاح! جاري التحويل...');
-            
-            // الان نحول المستخدم الى الصفحة الرئيسية ,, بس عادها مش موجودة 
-            // setTimeout(() => {
-            //     window.location.href = 'index.html';
-            // }, 1500);
+            errorDiv.removeClass('d-none').addClass('alert-success').text('تم إنشاء الحساب بنجاح! جاري التحويل...');
+
+
+            loading(1);
+
+
+            setTimeout(() => {
+                window.location.href = '../home/index.html';
+            }, 1500);
 
         } catch (error) {
-            // لو حصل خطاء في الكاتش , نفعل رسالة للمستخدم 
-            statusMsg.removeClass('d-none').addClass('alert-danger');
-            
+            // معالجة الأخطاء
+            errorDiv.removeClass('d-none').addClass('alert-danger');
+
             if (error.code === 'auth/email-already-in-use') {
-                statusMsg.text('هذا البريد الإلكتروني مسجل بالفعل.');
+                errorDiv.text('هذا البريد الإلكتروني مسجل بالفعل.');
             } else {
-                statusMsg.text('حدث خطأ: ' + error.message);
+                errorDiv.text('حدث خطأ: ' + error.message);
             }
 
-            // إعادة تفعيل الزر بعد ماكملنا كل شي 
-            btn.prop('disabled', false);
-            btnText.removeClass('d-none');
-            btnLoader.addClass('d-none');
+            // إعادة تفعيل الزر
+            loading(1);
         }
     });
 });
+
+
+function loading(flag) {
+
+    if (flag == 0) {
+        $('#errorMessage').addClass('d-none').removeClass('alert-danger alert-success');
+
+        $('#btnText').addClass('d-none');
+        $('#btnLoader').removeClass('d-none');
+    }
+    else {
+        $('#btnText').removeClass('d-none');
+        $('#btnLoader').addClass('d-none');
+    }
+
+}

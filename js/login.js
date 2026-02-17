@@ -1,13 +1,13 @@
-
 import { auth } from './firebase-config.js';
 import { signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 $(document).ready(function () {
 
-    // هذم تعليقات عشان لو تحبو تراجعو الكود بعدين
+    // التعامل مع نموذج تسجيل الدخول
     $('#loginForm').on('submit', function (e) {
         e.preventDefault();
 
+        loading(1);
         const email = $('#email').val();
         const password = $('#password').val();
         const errorDiv = $('#errorMessage');
@@ -16,10 +16,13 @@ $(document).ready(function () {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // نجاح تسجيل الدخول
+              
+                loading(0);
                 window.location.href = '../home/index.html';
             })
             .catch((error) => {
                 // فشل تسجيل الدخول
+                loading(0);
                 errorDiv.removeClass('d-none').text("خطأ: " + error.message);
             });
     });
@@ -37,3 +40,18 @@ $(document).ready(function () {
 
 });
 
+
+function loading(flag) {
+
+    if (flag == 0) {
+        $('#errorMessage').addClass('d-none').removeClass('alert-danger alert-success');
+
+        $('#btnText').addClass('d-none');
+        $('#btnLoader').removeClass('d-none');
+    }
+    else {
+        $('#btnText').removeClass('d-none');
+        $('#btnLoader').addClass('d-none');
+    }
+
+}

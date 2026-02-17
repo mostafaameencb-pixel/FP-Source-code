@@ -4,6 +4,7 @@ body::before {
     inset: 0;
 
     background-image: url("../assets/img/backGround.jpg");
+    /* مسار الصورة */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -32,7 +33,7 @@ body {
     overflow-x: hidden;
 }
 
-.login-container {
+.auth-container {
     width: 100%;
     max-width: 450px;
     padding: 20px;
@@ -96,6 +97,7 @@ body {
     transform: translateY(-50%);
 }
 
+/* تعديل المسافات للأيقونات في RTL */
 .has-icon .form-control {
     padding-left: 45px;
 }
@@ -159,6 +161,7 @@ body {
     font-weight: bold;
 }
 
+/* تحريك بسيط للخلفية */
 @keyframes gradMove {
     0% {
         background-position: 0% 50%;
