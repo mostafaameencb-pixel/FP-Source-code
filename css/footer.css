@@ -1,0 +1,84 @@
+/* Modern Footer Styling */
+.modern-footer {
+    background-color: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 60px;
+    position: relative;
+}
+
+/* روابط التذييل */
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #64748b;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.95rem;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: #764ba2;
+    transform: translateX(-5px); /* حركة خفيفة عند التمرير */
+}
+
+/* أيقونات التواصل الاجتماعي */
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: #f1f5f9;
+    color: #64748b;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background: var(--primary-gradient);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(118, 75, 162, 0.2);
+}
+
+/* مجموعة النشرة البريدية */
+.newsletter-group .form-control {
+    background: #f8fafc;
+    border: 1px solid #edf2f7;
+    border-radius: 12px 0 0 12px !important;
+    font-size: 0.9rem;
+    padding: 12px;
+}
+
+.newsletter-group .btn {
+    border-radius: 0 12px 12px 0 !important;
+}
+
+/* أيقونات الدفع في الأسفل */
+.footer-badges {
+    font-size: 1.5rem;
+    color: #cbd5e1;
+}
+
+/* خط الفاصل */
+hr.opacity-10 {
+    border-top: 1px solid #000;
+    opacity: 0.05 !important;
+}
+
+/* تخصيص للموبايل */
+@media (max-width: 991.98px) {
+    .modern-footer {
+        text-align: center;
+    }
+    .social-links {
+        justify-content: center;
+    }
+    .footer-links a:hover {
+        transform: translateY(-3px); /* تغيير اتجاه الحركة في الموبايل */
+    }
+}

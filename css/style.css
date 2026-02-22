@@ -1,16 +1,19 @@
 @import url("colors/light.css");
-
+@import url("nav.css");
+@import url("footer.css");
+@import url("shemmer.css");
 
 :root {
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
-    font-family: 'Tajawal', sans-serif;
+    font-family: 'Cairo', sans-serif;
     background-color: #f8fafc;
     min-height: 100vh;
 }
 
+/* Common Utilities */
 .custom-card {
     background: white;
     border-radius: 24px;

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرئيسية - المنصة الذكية</title>
+
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/home.css">
+</head>
+
+<body>
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- BODY Section -->
+
+
+    <main class="chat-wrapper">
+        <!-- Header Section -->
+
+        <header class="text-center mb-5">
+            <h2 class="fw-bold">مرحباً بك في FitLife </h2>
+            <p class="text-muted">أخبرنا كيف تشعراليوم لنساعدك في اختيار وجباتك المناسبة</p>
+        </header>
+
+
+        <!-- 1. Mood Selection Section -->
+        <section class="custom-card">
+            <h5 class="fw-bold mb-4 text-center">كيف تشعر اليوم؟</h5>
+            <div class="mood-selector">
+                <label class="mood-item">
+                    <input type="radio" name="userMood" value="very-happy">
+                    <div class="mood-btn mood-excellent">
+                        <i class="fas fa-smile-beam emoji-icon"></i>
+                        <i class="fas fa-battery-full battery-icon"></i>
+                    </div>
+                </label>
+                <label class="mood-item">
+                    <input type="radio" name="userMood" value="happy">
+                    <div class="mood-btn mood-good">
+                        <i class="fas fa-smile emoji-icon"></i>
+                        <i class="fas fa-battery-three-quarters battery-icon"></i>
+                    </div>
+                </label>
+                <label class="mood-item">
+                    <input type="radio" name="userMood" value="neutral">
+                    <div class="mood-btn mood-neutral">
+                        <i class="fas fa-meh emoji-icon"></i>
+                        <i class="fas fa-battery-half battery-icon"></i>
+                    </div>
+                </label>
+                <label class="mood-item">
+                    <input type="radio" name="userMood" value="sad">
+                    <div class="mood-btn mood-sad">
+                        <i class="fas fa-frown emoji-icon"></i>
+                        <i class="fas fa-battery-quarter battery-icon"></i>
+                    </div>
+                </label>
+                <label class="mood-item">
+                    <input type="radio" name="userMood" value="very-sad">
+                    <div class="mood-btn mood-bad">
+                        <i class="fas fa-angry emoji-icon"></i>
+                        <i class="fas fa-battery-empty battery-icon"></i>
+                    </div>
+                </label>
+            </div>
+        </section>
+
+        <!-- 2. AI Input Section -->
+        <section class="custom-card">
+            <div class="ai-input-group">
+                <textarea id="userInput" class="form-control mb-3" rows="3"
+                    placeholder=" اكتب بماذا تشعر به اليوم...."></textarea>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-muted small"><i class="fas fa-info-circle me-1"></i> Gemini AI مدعوم بواسطة</span>
+                    <button id="btnSend" class="btn btn-primary-custom">
+                        إرسال <i class="fas fa-paper-plane ms-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loader -->
+            <div class="loader text-center mt-4" id="loader">
+                <div class="spinner-border text-primary" role="status"></div>
+                <p class="mt-2 text-muted">جاري التفكير في إجابة...</p>
+            </div>
+
+            <!-- AI Response Area -->
+            <div id="responseArea" class="response-area">
+                <h6 class="fw-bold text-primary mb-2"><i class="fas fa-robot me-2"></i> إجابة الذكاء الاصطناعي:</h6>
+                <div id="aiContent" style="white-space: pre-wrap; line-height: 1.7;"></div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../../js/main.js"></script>
+
+
+</body>
+
+</html>

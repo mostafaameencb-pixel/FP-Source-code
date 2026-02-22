@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg fixed-top modern-navbar">
+    <div class="container">
+
+        <!-- جهة اليسار: معلومات المستخدم وخروج -->
+        <div class="d-flex align-items-center order-lg-1">
+            <a class="nav-link" href="../profile/profile.html">
+                <div class="user-profile d-none d-sm-flex align-items-center me-3">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info ms-2">
+                        <span class="welcome-text">مرحباً،</span>
+                        <strong id="userName" class="user-name"></strong>
+                    </div>
+                </div>
+            </a>
+
+
+            <button id="btnLogout" class="btn btn-logout shadow-sm">
+                <i class="fas fa-sign-out-alt ms-1"></i>
+                <span>خروج</span>
+            </button>
+        </div>
+
+
+
+        <!-- المنتصف: الروابط -->
+        <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+            <ul class="navbar-nav mx-auto nav-links-container">
+                <li class="nav-item">
+                    <a class="nav-link" href="../home/index.html">
+                        <i class="fas fa-home"></i> الرئيسية
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../home/history.html">
+                        <i class="fas fa-history"></i> السجل
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../posts/index.html">
+                        <i class="fas fa-users"></i> المجتمع
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- جهة اليمين: الشعار -->
+        <a class="navbar-brand fw-bold order-lg-3" href="../home/index.html">
+            <span class="brand-dot"></span> FitLife
+
+        </a>
+
+        <!-- زر التبديل للموبايل -->
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    </div>
+
+
+</nav>
