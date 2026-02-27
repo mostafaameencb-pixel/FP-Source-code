@@ -1,0 +1,98 @@
+/* css/result.css */
+
+.recipe-card {
+    border: none;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-wrapper {
+    position: relative;
+    padding-top: 65%;
+    /* Aspect Ratio */
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.recipe-card:hover .card-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    font-family: 'Cairo', sans-serif;
+}
+
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: auto;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.nutrition-item {
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.nutrition-item span {
+    display: block;
+    font-weight: bold;
+    color: var(--primary-color, #0d6efd);
+}
+
+.nutrition-label {
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+.btn-details {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 15px;
+    width: 100%;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.btn-details:hover {
+    opacity: 0.9;
+    color: white;
+}

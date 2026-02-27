@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتائج الاقتراحات - FitLife</title>
+    <!-- Bootstrap 5 -->
+    <!-- Bootstrap JS + Popper (مهم للـ Modal) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/result.css">
+    <link rel="stylesheet" href="../../css/rating.css">
+</head>
+
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <main class="container py-5 mt-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-6 mb-3">اقتراحاتنا لك 🥗</h2>
+            <p class="text-muted lead">بناءً على حالتك المزاجية واحتياجاتك الغذائية، اخترنا لك هذه الوجبات المميزة.</p>
+        </div>
+
+        <!-- منطقة النتائج -->
+        <div id="resultsGrid" class="row g-4 justify-content-center">
+            <!-- سيتم حقن الكروت هنا برمجياً -->
+            <div class="col-12 text-center">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="index.html" class="btn btn-outline-secondary px-4 py-2 rounded-pill">
+                <i class="fas fa-arrow-right ms-2"></i> حاول مرة أخرى
+            </a>
+            <button id="btnRate" class="btn btn-warning px-4 rounded-pill">
+                <i class="fas fa-star me-2"></i> تقييم
+            </button>
+        </div>
+
+
+    </main>
+
+    <!-- Rating Modal -->
+    <div class="modal fade" id="ratingModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold">ما رأيك في الاقتراحات؟</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <p class="text-muted mb-4">ساعدنا في تحسين تجربتك بتقييم دقة النتائج</p>
+
+                    <!-- Stars -->
+                    <div class="rating-stars mb-4" id="ratingStars">
+                        <i class="far fa-star star-icon" data-value="1"></i>
+                        <i class="far fa-star star-icon" data-value="2"></i>
+                        <i class="far fa-star star-icon" data-value="3"></i>
+                        <i class="far fa-star star-icon" data-value="4"></i>
+                        <i class="far fa-star star-icon" data-value="5"></i>
+                    </div>
+
+                    <!-- Comment -->
+                    <textarea class="form-control bg-light border-0 rounded-3 mb-3 p-3" id="ratingComment" rows="3"
+                        placeholder="ملاحظات إضافية (اختياري)..."></textarea>
+
+                    <div id="ratingError" class="text-danger small mb-2 d-none">يرجى اختيار عدد النجوم</div>
+
+                </div>
+                <div class="modal-footer border-0 pt-0 justify-content-center pb-4">
+                    <button type="button" class="btn btn-primary-custom w-100 rounded-pill" id="btnSubmitRating">
+                        <span id="txtSubmit">إرسال التقييم</span>
+                        <span id="spinnerSubmit" class="spinner-border spinner-border-sm d-none"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="module" src="../../js/result.js"></script>
+</body>
+
+</html>
