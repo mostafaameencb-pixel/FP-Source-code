@@ -8,9 +8,6 @@
     display: inline-block;
 }
 
-/* We want RTL stars but usually standard interaction is Left-Low to Right-High.
-   In RTL, first visual star (rightmost) might be interpreted as logic.
-   Let's keep it simple: hover logic handles highlighting. */
 
 .star-icon {
     transition: transform 0.2s;

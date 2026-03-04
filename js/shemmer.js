@@ -1,7 +1,6 @@
-// shemmer.js
 
 export const PageLoader = {
-    // 1. حقن الـ HTML برمجياً
+    // HTML برمجياً
     init: function() {
         if ($('#globalLoader').length === 0) {
             const loaderHtml = `
@@ -30,5 +29,4 @@ export const PageLoader = {
     }
 };
 
-// اختياري: جعله متاحاً للسكربتات العادية التي لا تدعم modules
 window.PageLoader = PageLoader;

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سجل الاقتراحات - FitLife</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/history.css">
+</head>
+
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+
+
+    <main class="container py-5 mt-5">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="fw-bold display-6 mb-2">سجل نشاطك 📅</h2>
+                <p class="text-muted">جميع الاقتراحات والوجبات التي حصلت عليها سابقاً</p>
+            </div>
+        </div>
+
+        
+        <div id="historyList" class="row justify-content-center g-4">
+
+            
+        </div>
+
+    </main>
+
+    <!-- Details Modal -->
+    <div class="modal fade" id="detailsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold text-primary">تفاصيل الاقتراح</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <!-- Session Info -->
+                    <div class="session-info bg-light rounded-3 p-3 mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary rounded-pill px-3 py-2" id="modalMood"></span>
+                            <small class="text-muted" id="modalDate"></small>
+                        </div>
+                        <p class="text-dark mb-0 fw-bold">وصفك: <span class="fw-normal text-muted"
+                                id="modalDesc"></span></p>
+                    </div>
+
+                    <!-- AI Response -->
+                    <div class="mb-4">
+                        <h6 class="fw-bold mb-2 section-title"><i class="fas fa-robot me-2 text-secondary"></i>رد
+                            المساعد الذكي</h6>
+                        <div class="p-3 border rounded-3 bg-white text-muted small" id="modalAiResponse"
+                            style="white-space: pre-line;"></div>
+                    </div>
+
+                    <!-- Foods List -->
+                    <div class="foods-section">
+                        <h6 class="fw-bold mb-3 section-title"><i
+                                class="fas fa-utensils me-2 text-secondary"></i>الأطعمة المقترحة</h6>
+                        <div id="modalFoodsGrid" class="row g-3">
+                            <!-- Food Cards injected here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../../js/history.js"></script>
+</body>
+
+</html>

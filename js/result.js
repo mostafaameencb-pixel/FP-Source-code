@@ -10,8 +10,7 @@ $(document).ready(function () {
     // التحقق من المصادقة
     checkAuth(() => {
         PageLoader.hide();
-    }, false); // false = لا تقم بالطرد إذا لم يكن مسجلاً، يمكن للعامل الزائر رؤية النتائج (حسب الرغبة)
-
+    }, false); // false = 
     // جلب البيانات من SessionStorage
     const storedResults = sessionStorage.getItem('recipeResults');
     const suggesttUid = sessionStorage.getItem('suggesttUid');

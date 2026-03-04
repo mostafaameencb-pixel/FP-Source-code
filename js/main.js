@@ -1,4 +1,3 @@
-// js/main.js
 import { loadPartials, checkAuth } from './common.js';
 import { db, doc, setDoc, addDoc, collection, serverTimestamp } from './firebase-config.js';
 
