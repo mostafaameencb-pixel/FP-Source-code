@@ -1,0 +1,113 @@
+
+/* Create Post Card */
+.create-post-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f2f5;
+}
+
+.user-avatar-sm {
+    width: 45px;
+    height: 45px;
+    background: #e9ecef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #adb5bd;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.post-input {
+    background: #f8f9fa;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    resize: none;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
+.post-input:focus {
+    background: #fff;
+    border-color: var(--primary-color, #0d6efd);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+}
+
+/* Post Card */
+.post-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f0f2f5;
+    transition: transform 0.2s;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.post-header {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.post-avatar {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.post-meta {
+    margin-right: 12px;
+}
+
+.post-username {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #2c3e50;
+    display: block;
+    line-height: 1.2;
+}
+
+.post-time {
+    font-size: 0.75rem;
+    color: #adb5bd;
+}
+
+.post-body {
+    padding: 20px;
+    color: #495057;
+    font-size: 1rem;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+.post-footer {
+    padding: 10px 20px;
+    border-top: 1px solid #f8f9fa;
+    background: #fafafa;
+    border-radius: 0 0 16px 16px;
+}
