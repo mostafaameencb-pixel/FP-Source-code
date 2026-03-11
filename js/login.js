@@ -7,7 +7,7 @@ $(document).ready(function () {
     $('#loginForm').on('submit', function (e) {
         e.preventDefault();
 
-        loading(1);
+        loading(0);
         const email = $('#email').val();
         const password = $('#password').val();
         const errorDiv = $('#errorMessage');
@@ -17,12 +17,12 @@ $(document).ready(function () {
             .then((userCredential) => {
                 // نجاح تسجيل الدخول
               
-                loading(0);
+                loading(1);
                 window.location.href = '../home/index.html';
             })
             .catch((error) => {
                 // فشل تسجيل الدخول
-                loading(0);
+                loading(1);
                 errorDiv.removeClass('d-none').text("خطأ: " + error.message);
             });
     });

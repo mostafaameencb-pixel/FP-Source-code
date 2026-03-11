@@ -25,10 +25,10 @@ $(document).ready(function () {
             alert("يرجى اختيار حالتك المزاجية من الأيقونات أولاً");
             return;
         }
-        if (!userText) {
-            alert("يرجى كتابة وصف بسيط لما تشعر به");
-            return;
-        }
+        // if (!userText) {
+        //     alert("يرجى كتابة وصف بسيط لما تشعر به");
+        //     return;
+        // }
         if (!currentUserData) {
             alert("جاري تحميل بياناتك، يرجى المحاولة بعد لحظات");
             return;

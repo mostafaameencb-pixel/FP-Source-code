@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف الشخصي - FitLife</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/profile.css">
+</head>
+
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <main class="container py-5 mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+
+                <!-- Profile Header Card -->
+                <div class="profile-header-card mb-4 text-center">
+                    <div class="profile-avatar-xl mb-3">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="fw-bold mb-1" id="viewName">جار التحميل...</h3>
+                    <p class="text-muted" id="viewEmail">...</p>
+                </div>
+
+                <!-- Menu Options -->
+                <div class="profile-menu-card">
+                    <div class="list-group list-group-flush">
+                        <!-- Edit Profile -->
+                        <a href="update.html"
+                            class="list-group-item list-group-item-action d-flex align-items-center p-3">
+                            <div class="menu-icon-wrapper bg-light-primary text-primary">
+                                <i class="fas fa-user-edit"></i>
+                            </div>
+                            <div class="ms-3 text-w flex-grow-1">
+                                <h6 class="mb-0 fw-bold">تعديل البيانات</h6>
+                                <small class="text-muted">تحديث الاسم، الوزن، الطول، وغيرها</small>
+                            </div>
+                            <i class="fas fa-chevron-left text-muted small"></i>
+                        </a>
+
+                        <!-- About App -->
+                        <button type="button"
+                            class="list-group-item list-group-item-action d-flex align-items-center p-3"
+                            data-bs-toggle="modal" data-bs-target="#aboutModal">
+                            <div class="menu-icon-wrapper bg-light-info text-info">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="ms-3 text-w flex-grow-1">
+                                <h6 class="mb-0 fw-bold">عن التطبيق</h6>
+                                <small class="text-muted">معلومات حول FitLife والإصدار</small>
+                            </div>
+                            <i class="fas fa-chevron-left text-muted small"></i>
+                        </button>
+
+                        <!-- Privacy Policy -->
+                        <button type="button"
+                            class="list-group-item list-group-item-action d-flex align-items-center p-3"
+                            data-bs-toggle="modal" data-bs-target="#privacyModal">
+                            <div class="menu-icon-wrapper bg-light-warning text-warning">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="ms-3 text-w flex-grow-1">
+                                <h6 class="mb-0 fw-bold">سياسة الخصوصية</h6>
+                                <small class="text-muted">كيف نحمي بياناتك</small>
+                            </div>
+                            <i class="fas fa-chevron-left text-muted small"></i>
+                        </button>
+
+                        <!-- Logout -->
+                        <button id="btnProfileLogout"
+                            class="list-group-item list-group-item-action d-flex align-items-center p-3 text-danger mt-2 border-top-0">
+                            <div class="menu-icon-wrapper bg-light-danger text-danger">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </div>
+                            <div class="ms-3 text-w flex-grow-1">
+                                <h6 class="mb-0 fw-bold">تسجيل الخروج</h6>
+                            </div>
+                            <i class="fas fa-chevron-left text-muted small"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- About Modal -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold">عن FitLife</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <img src="../../assets/img/logo.png" class="mb-3"
+                        style="width: 80px; height: 80px; object-fit: contain;" onerror="this.style.display='none'">
+                    <h4 class="fw-bold text-primary mb-2">FitLife</h4>
+                    <p class="text-muted">الإصدار 1.0.0</p>
+                    <p class="px-3">
+                        تطبيق ذكي يساعدك على تحسين نمط حياتك الصحي من خلال توصيات غذائية مخصصة باستخدام أحدث تقنيات
+                        الذكاء الاصطناعي.
+                    </p>
+                    <p class="text-muted small">© 2026 جميع الحقوق محفوظة</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold">سياسة الخصوصية</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="fw-bold">1. جمع البيانات</h6>
+                    <p class="text-muted small">نقوم بجمع البيانات التي تقدمها مثل الاسم، الوزن، والطول لغرض تقديم
+                        توصيات دقيقة.</p>
+
+                    <h6 class="fw-bold">2. استخدام البيانات</h6>
+                    <p class="text-muted small">تستخدم بياناتك فقط داخل التطبيق لتحسين تجربتك ولا يتم مشاركتها مع أطراف
+                        ثالثة.</p>
+
+                    <h6 class="fw-bold">3. الأمان</h6>
+                    <p class="text-muted small">نتخذ كافة التدابير الأمنية لحماية بياناتك الشخصية المشفرة في خوادمنا.
+                    </p>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-primary-custom w-100" data-bs-dismiss="modal">فهمت ذلك</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../../js/profile_view.js"></script>
+</body>
+
+</html>
