@@ -35,6 +35,8 @@ export function loadPartials() {
  * @param {Function} onAuthorized - Callback function called when user is authenticated. Receives (user, userData).
  * @param {boolean} redirectIfUnauth - Whether to redirect to login if not authenticated. Default true.
  */
+
+
 export function checkAuth(onAuthorized, redirectIfUnauth = true) {
     PageLoader.show();
     onAuthStateChanged(auth, async (user) => {
@@ -46,6 +48,14 @@ export function checkAuth(onAuthorized, redirectIfUnauth = true) {
                     userData = userDoc.data();
                     // Update user name in navbar if it exists
                     $('#userName').text(userData.fullName);
+
+                    if (userData.type === "admin") {
+                        $('#btnAdmin').removeClass("d-none");
+
+                    }
+
+
+
                 }
                 if (onAuthorized) onAuthorized(user, userData);
             } catch (error) {
@@ -74,7 +84,45 @@ export function setupLogout() {
     });
 }
 
+export function goAdmin() {
+    $(document).on('click', '#btnAdmin', function () {
+        window.location.href = '/page/admin/';
+
+    });
+}
+
 // Initialize common components
 $(document).ready(function () {
     setupLogout();
+    goAdmin();
 });
+
+
+
+
+// export async function checkIfAdmin() {
+//     return new Promise((resolve) => {
+//         onAuthStateChanged(auth, async (user) => {
+//             if (!user) {
+//                 resolve(false);
+//                 return;
+//             }
+
+//             try {
+//                 const userDoc = await getDoc(doc(db, "users", user.uid));
+
+//                 if (userDoc.exists()) {
+//                     const userData = userDoc.data();
+//                     resolve(userData.type === "admin");
+//                 } else {
+//                     resolve(false);
+//                 }
+
+//             } catch (error) {
+//                 console.error("Error checking admin:", error);
+//                 resolve(false);
+//             }
+//         });
+//     });
+
+// }

@@ -5,7 +5,7 @@ loadPartials();
 
 
 $(document).ready(function () {
-    const GEMINI_API_KEY = "AIzaSyC_NGZdew7zBcPvcBKrH6NousO9oeAyO5E";
+    const GEMINI_API_KEY = "AIzaSyBfYGLYfPMonzK9xP84q895pC99TojbRu8";
     const SPOONACULAR_API_KEY = "84077c45edea47c1b2a9472c95a178fb"; // ضع مفتاحك هنا
     let currentUserData = null;
     let currentUid = null;

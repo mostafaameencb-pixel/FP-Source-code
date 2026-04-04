@@ -18,7 +18,8 @@ export function checkAdmin() {
                     // Not an admin
                     alert("عذراً، لا تملك صلاحية الدخول لهذه الصفحة.");
                     window.location.href = '../../page/home/index.html';
-                } else {
+                }
+                else {
                     // Is Admin - Allow
                     // Update Sidebar Name if element exists
                     $('#adminName').text(userData.fullName);
@@ -37,13 +38,7 @@ export function checkAdmin() {
     });
 }
 
-function setupAdminLogout() {
-    $('#btnAdminLogout').click(() => {
-        signOut(auth).then(() => {
-            window.location.href = '../../page/auth/login.html';
-        });
-    });
-}
+
 
 // Function to render sidebar
 export function loadAdminSidebar(activePage) {
@@ -64,7 +59,7 @@ export function loadAdminSidebar(activePage) {
         <div class="sidebar-container bg-white h-100">
             <a href="#" class="sidebar-logo text-decoration-none">
                 <span class="brand-dot me-2"></span>
-                FitLife Admin
+                M-PATH Admin
             </a>
             
             <ul class="nav flex-column mb-auto">
@@ -115,5 +110,14 @@ export function loadAdminSidebar(activePage) {
         } else {
             $('#sidebarOverlay').fadeOut();
         }
+    });
+}
+
+
+function setupAdminLogout() {
+    $('#btnAdminLogout').click(() => {
+        signOut(auth).then(() => {
+            window.location.href = '../../page/auth/login.html';
+        });
     });
 }

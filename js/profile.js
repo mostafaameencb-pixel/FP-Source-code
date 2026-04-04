@@ -9,6 +9,7 @@ PageLoader.show();
 let currentUid = null;
 
 $(document).ready(function () {
+  
     checkAuth((user, userData) => {
         if (userData) {
             currentUid = user.uid; // Store UID for update
@@ -68,13 +69,13 @@ $(document).ready(function () {
             $('#userName').text(fullName); 
 
             errorDiv.removeClass('d-none').removeClass('alert-danger').addClass('alert-success').text('تم تحديث البيانات بنجاح!');
+            loading(1);
 
             // إخفاء الرسالة بعد فترة
-            setTimeout(() => {
-                errorDiv.addClass('d-none').removeClass('alert-success');
-            }, 3000);
+       
+                window.location.href = '../profile/profile.html';
 
-            loading(1);
+            
 
         } catch (error) {
             console.error("Error updating profile:", error);

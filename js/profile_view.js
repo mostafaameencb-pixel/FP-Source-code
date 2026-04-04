@@ -6,6 +6,7 @@ loadPartials();
 PageLoader.show();
 
 $(document).ready(function () {
+    
     // 1. Check Auth & Load Data
     checkAuth((user, userData) => {
         if (userData) {
