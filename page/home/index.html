@@ -102,6 +102,46 @@
         </section>
     </main>
 
+    <div class="modal fade" id="mealTypeModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold">اختر نوع الوجبة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-3">
+                    <p class="text-muted mb-3">اختر مستوى الوجبة المناسب قبل متابعة إرسال الطلب.</p>
+                    <div class="meal-type-options">
+                        <label class="meal-type-option">
+                            <input type="radio" name="mealType" value="easy">
+                            <span class="meal-type-card">
+                                <span class="meal-type-title">وجبة سهلة</span>
+                                <span class="meal-type-desc">خفيفة وسريعة التحضير</span>
+                            </span>
+                        </label>
+                        <label class="meal-type-option">
+                            <input type="radio" name="mealType" value="medium">
+                            <span class="meal-type-card">
+                                <span class="meal-type-title">وجبة متوسطة التحضير</span>
+                                <span class="meal-type-desc">متوازنة وبخطوات تحضير معتدلة</span>
+                            </span>
+                        </label>
+                        <label class="meal-type-option">
+                            <input type="radio" name="mealType" value="hearty">
+                            <span class="meal-type-card">
+                                <span class="meal-type-title">وجبة دسمة</span>
+                                <span class="meal-type-desc">أغنى وأكثر إشباعًا</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-light px-4" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" id="btnConfirmMealType" class="btn btn-primary-custom">متابعة</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>

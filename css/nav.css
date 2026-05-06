@@ -87,6 +87,10 @@
 
 }
 
+.mainLogo {
+    width: 80px;
+    height: 80px;
+}
 .btn-logout:hover {
     background: var(--danger-color);
     color: white;
