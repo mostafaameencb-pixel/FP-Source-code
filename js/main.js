@@ -92,9 +92,10 @@ $(document).ready(function () {
 ابدأ الآن.
 `;
 
-        console.log(finalPrompt);
+       
 
         try {
+            
             const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${GEMINI_API_KEY}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -112,9 +113,6 @@ $(document).ready(function () {
 
             if (data.candidates && data.candidates[0].content) {
                 const aiResponse = data.candidates[0].content.parts[0].text;
-                // $('#aiContent').text(aiResponse);
-                // $('#responseArea').fadeIn();
-
                 const cleanedJson = aiResponse
                     .replace(/^```json\s*/i, '')
                     .replace(/```$/i, '')
@@ -126,7 +124,6 @@ $(document).ready(function () {
                     throw new Error("Parsed AI response is not an array");
                 }
 
-                console.log("Parsed meals:", meals);
                 const allRecipes = [];
 
                 for (const meal of meals) {
