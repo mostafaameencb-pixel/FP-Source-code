@@ -4,7 +4,7 @@ import { PageLoader } from './shemmer.js';
 
 loadPartials();
 // Moment.js setup
-moment.locale('ar');
+ moment.locale('ar');
 
 $(document).ready(function () {
     let currentUser = null;

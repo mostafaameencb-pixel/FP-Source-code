@@ -28,13 +28,13 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD2mYZaFytpYby8kgUPLZKtnfsLqinazlM",
-  authDomain: "mood-project-5de4c.firebaseapp.com",
-  projectId: "mood-project-5de4c",
-  storageBucket: "mood-project-5de4c.firebasestorage.app",
-  messagingSenderId: "675902986206",
-  appId: "1:675902986206:web:7d029b50537ac55756af4f",
-  measurementId: "G-N8NF2BTYR4"
+  apiKey: "AIzaSyC7r7CgHoBTH1OG5_SxGjUsYva99XlD0l8",
+  authDomain: "m-path-edf47.firebaseapp.com",
+  projectId: "m-path-edf47",
+  storageBucket: "m-path-edf47.firebasestorage.app",
+  messagingSenderId: "252878470479",
+  appId: "1:252878470479:web:7fe7c94bb39addcb45593a",
+  measurementId: "G-87CG3WML5N"
 };
 
 // Initialize Firebase
